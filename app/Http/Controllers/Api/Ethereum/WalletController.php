@@ -23,17 +23,17 @@ class WalletController extends Controller
 
             $data = [
                 'transactionsCount' => $item['transactionsCount'],
-                'confirmedBalance' => [
+                'confirmedBalance'  => [
                     'amount' => $item['confirmed_balance_amount'],
-                    'unit' => $item['confirmed_balance_unit']
+                    'unit'   => $item['confirmed_balance_unit']
                 ],
                 'totalReceived' => [
                     'amount' => $item['received_amount'],
-                    'unit' => $item['received_unit']
+                    'unit'   => $item['received_unit']
                 ],
                 'totalSpent' => [
                     'amount' => $item['spent_amount'],
-                    'unit' => $item['spent_unit']
+                    'unit'   => $item['spent_unit']
                 ],
                 'incomingTransactionsCount' => $item['incomeTransactions'],
                 'outgoingTransactionsCount' => $item['outgoingTransactions']
@@ -44,11 +44,11 @@ class WalletController extends Controller
             ], 200);
 
         } else {
+
             // Get Data from API
-            $chain   = 'ethereum';
-            $network = config('keys.ethereum.network');
-            $address = $data['address'];
-    
+            $chain    = 'ethereum';
+            $network  = config('keys.ethereum.network');
+            $address  = $data['address'];
             $endPoint = "blockchain-data/{$chain}/{$network}/addresses/{$address}";
             $response = Http::cryptoapi()->get($endPoint);
             $jsonData = $response->json();

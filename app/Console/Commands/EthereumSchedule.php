@@ -57,15 +57,15 @@ class EthereumSchedule extends Command
                         'address' => $aData['address']
                     ],
                     [
-                        'transactionsCount' => $item['transactionsCount'],
+                        'transactionsCount'        => $item['transactionsCount'],
                         'confirmed_balance_amount' => $item['confirmedBalance']['amount'],
-                        'confirmed_balance_unit' => $item['confirmedBalance']['unit'],
-                        'received_amount' => $item['totalReceived']['amount'],
-                        'received_unit' => $item['totalReceived']['unit'],
-                        'spent_amount' => $item['totalSpent']['amount'],
-                        'spent_unit' => $item['totalSpent']['unit'],
-                        'incomeTransactions' => $item['incomingTransactionsCount'],
-                        'outgoingTransactions' => $item['outgoingTransactionsCount']
+                        'confirmed_balance_unit'   => $item['confirmedBalance']['unit'],
+                        'received_amount'          => $item['totalReceived']['amount'],
+                        'received_unit'            => $item['totalReceived']['unit'],
+                        'spent_amount'             => $item['totalSpent']['amount'],
+                        'spent_unit'               => $item['totalSpent']['unit'],
+                        'incomeTransactions'       => $item['incomingTransactionsCount'],
+                        'outgoingTransactions'     => $item['outgoingTransactionsCount']
                     ]
                 );
             }
