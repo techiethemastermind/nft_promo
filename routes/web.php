@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\Ethereum\WalletController as EtherWalletController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +21,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+Route::controller(EtherWalletController::class)
+    ->prefix('ethereum')
+    ->name('ethereum.')
+    ->group(function () {
+    Route::get('/wallet', 'index')->name('wallet');
+    Route::post('/update', 'update')->name('update');
+});
