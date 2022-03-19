@@ -23,7 +23,7 @@
 
             <div class="row" role="tablist">
                 <div class="col-auto">
-                    <a href="javascript:void(0)" id="btn_update" class="btn btn-outline-secondary">Manual Update</a>
+                    <a href="javascript:void(0)" id="btn_update" class="btn btn-outline-secondary">Manual Update Now</a>
                 </div>
             </div>
         </div>

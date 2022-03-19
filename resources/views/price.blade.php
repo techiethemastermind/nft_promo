@@ -10,12 +10,12 @@
             <div class="flex d-flex flex-column flex-sm-row align-items-center mb-24pt mb-md-0">
 
                 <div class="mb-24pt mb-sm-0 mr-sm-24pt">
-                    <h2 class="mb-0">Ethereum</h2>
+                    <h2 class="mb-0">Base Prices</h2>
 
                     <ol class="breadcrumb p-0 m-0">
 
                         <li class="breadcrumb-item active">
-                            Ethereum
+                            Prices
                         </li>
                     </ol>
                 </div>
@@ -23,7 +23,7 @@
 
             <div class="row" role="tablist">
                 <div class="col-auto">
-                    <a href="javascript:void(0)" id="btn_update" class="btn btn-outline-secondary">Manual Update</a>
+                    <a href="javascript:void(0)" id="btn_update" class="btn btn-outline-secondary">Manual Update Now</a>
                 </div>
             </div>
         </div>
@@ -32,7 +32,7 @@
     <div class="page-section border-bottom-2">
         <div class="container page__container">
             <div class="page-separator">
-                <div class="page-separator__text">Ethereum Wallets</div>
+                <div class="page-separator__text">Base Prices</div>
             </div>
             <div class="card dashboard-area-tabs p-relative o-hidden mb-lg-32pt">
                 <div class="table" data-toggle="lists" data-lists-sort-by="js-lists-values-schedule" data-lists-sort-desc="true" data-lists-values="[&quot;js-lists-values-no&quot;]">
@@ -54,7 +54,7 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->from }}</td>
                                     <td>{{ $item->to }}</td>
-                                    <td></td>
+                                    <td>{{ $item->value }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -75,16 +75,18 @@
 
         $('#btn_update').on('click', (e) => {
 
-            $.ajax({
-                method: "POST",
-                url: "{{ route('ethereum.update') }}",
-                success: function(res) {
-                    console.log(res)
-                },
-                error: function(err) {
-                    console.log(err);
-                }
-            });
+            console.log('Price Update Manually Now');
+
+            // $.ajax({
+            //     method: "POST",
+            //     url: "",
+            //     success: function(res) {
+            //         console.log(res)
+            //     },
+            //     error: function(err) {
+            //         console.log(err);
+            //     }
+            // });
         });
     });
 </script>
