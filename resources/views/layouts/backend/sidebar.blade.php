@@ -7,6 +7,7 @@
                     <img src="{{ asset('images/logo.png') }}" alt="logo" class="img-fluid" />
                 </span>
             </a>
+
             <!-- Sidebar Head -->
             <div class="sidebar-heading">Ethereum</div>
 
@@ -28,7 +29,19 @@
                     </a>
                 </li>
             </ul>
-            
+
+            <!-- Setting Header -->
+            <div class="sidebar-heading">Setting</div>
+
+            <!-- Sidebar Menu -->
+            <ul class="sidebar-menu">
+                <li class="sidebar-menu-item {{ Request::is('price') ? 'active' : '' }}">
+                    <a class="sidebar-menu-button" href="{{ route('price') }}">
+                        <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">attach_money</span>
+                        <span class="sidebar-menu-text">Prices</span>
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
 </div>

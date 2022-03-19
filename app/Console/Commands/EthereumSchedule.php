@@ -70,5 +70,7 @@ class EthereumSchedule extends Command
                 );
             }
         }
+
+        return 0;
     }
 }

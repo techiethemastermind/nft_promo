@@ -22,6 +22,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+Route::get('/price', [App\Http\Controllers\Admin\PriceController::class, 'index'])->name('price');
 Route::controller(EtherWalletController::class)
     ->prefix('ethereum')
     ->name('ethereum.')
