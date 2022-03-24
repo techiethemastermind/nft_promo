@@ -25,7 +25,9 @@
 
     <div class="py-4">
       <div v-if="errorMsg">{{ errorMsg }}</div>
-      <pre>{{ ethWalletData }}</pre>
+      <div class="flex flex-wrap sm:flex-no-wrap items-center justify-between w-full">
+        <div class="w-full h-64 rounded-t shadow bg-gray-200 dark:bg-gray-800"></div>
+      </div>
     </div>
   </PageComponent>
 </template>
